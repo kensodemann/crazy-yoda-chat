@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChatService } from '../services/chat.service';
+import { ChatMessage } from '../models/chat-message';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ChatService } from '../services/chat.service';
 })
 export class HomePage implements OnInit {
   message: string;
-  messages: Array<string>;
+  messages: Array<ChatMessage>;
   @ViewChild('messageInput') inp;
 
   constructor(private chat: ChatService) {}

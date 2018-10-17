@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { ChatMessage } from '../models/chat-message';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  private messages: Array<string> = [];
+  private messages: Array<ChatMessage> = [];
   private responses: Array<string> = [
     'Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.',
     'You must unlearn what you have unlearned.',
@@ -29,11 +30,14 @@ export class ChatService {
   ];
 
   send(msg: string) {
-    this.messages.push(msg);
-    this.messages.push(this.responses[this.getRandomIdx()]);
+    this.messages.push({ author: 'me', message: msg });
+    this.messages.push({
+      author: 'yoda',
+      message: this.responses[this.getRandomIdx()]
+    });
   }
 
-  history(): Array<string> {
+  history(): Array<ChatMessage> {
     return this.messages;
   }
 
