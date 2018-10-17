@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChatService } from '../services/chat.service';
 
 @Component({
@@ -6,13 +6,17 @@ import { ChatService } from '../services/chat.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage {
+export class HomePage implements OnInit {
   message: string;
   messages: Array<string>;
+  @ViewChild('messageInput') inp;
 
   constructor(private chat: ChatService) {}
 
-  sendMessage() {
+  ngOnInit() { }
+
+  sendMessage(evt: Event) {
+    this.inp.setFocus();
     if (this.message) {
       this.chat.send(this.message);
       this.messages = this.chat.history();

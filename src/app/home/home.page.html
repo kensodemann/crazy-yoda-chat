@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      Crazy Yoda Chat 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,8 +15,8 @@
 <ion-footer>
   <ion-toolbar>
     <ion-item>
-      <ion-input [(ngModel)]="message"></ion-input>
-      <ion-button (click)="sendMessage()">Send</ion-button>
+      <ion-input #messageInput [(ngModel)]="message"></ion-input>
+      <ion-button (click)="sendMessage($event)">Send</ion-button>
     </ion-item>
   </ion-toolbar>
 </ion-footer>
