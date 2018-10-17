@@ -1,0 +1,7 @@
+{
+  "name": "fake-chat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
