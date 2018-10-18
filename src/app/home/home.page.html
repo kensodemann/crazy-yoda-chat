@@ -15,7 +15,7 @@
 <ion-footer>
   <ion-toolbar>
     <ion-item>
-      <ion-input #messageInput [(ngModel)]="message"></ion-input>
+      <ion-input autofocus #messageInput [(ngModel)]="message"></ion-input>
       <ion-button (click)="sendMessage($event)">Send</ion-button>
     </ion-item>
   </ion-toolbar>
