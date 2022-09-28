@@ -1,0 +1,7 @@
+{
+  "name": "crazy-yoda-chat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
